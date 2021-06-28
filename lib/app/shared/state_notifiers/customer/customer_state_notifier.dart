@@ -9,8 +9,11 @@ part 'customer_state.dart';
 part 'customer_state_notifier.freezed.dart';
 
 class CustomerStateNotifier extends StateNotifier<CustomerState> {
+  CustomerStateNotifier(CustomerRepository repository)
+      : _repository = repository,
+        super(CustomerState.initial());
+
   final CustomerRepository _repository;
-  CustomerStateNotifier(this._repository) : super(CustomerState.initial());
 
   void load() async {
     state = CustomerState.loading();
