@@ -27,7 +27,10 @@ class _OffersWidgetState extends State<OffersWidget> {
           return offersState.maybeWhen(
             failure: (error) => Text(error),
             loading: () => CircularProgressIndicator(),
-            success: (offers) => ListView.builder(
+            success: (offers) => GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+              ),
               key: Key("offers"),
               itemCount: offers.length,
               itemBuilder: (_, i) => OfferWidget(

@@ -21,20 +21,41 @@ class OfferWidget extends StatelessWidget {
       ),
       child: Card(
         margin: EdgeInsets.all(20),
-        child: Container(
-          padding: EdgeInsets.all(20),
-          child: Column(
-            children: [
-              Text("${_offer.product.name}"),
-              SizedBox(height: 5),
-              Text(
-                "\$${_offer.price}",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Container(
+              color: Colors.green,
+              width: double.maxFinite,
+              height: 70,
+              child: Image.network(
+                _offer.product.image,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "${_offer.product.name}",
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    SizedBox(height: 5),
+                    Text(
+                      "\$${_offer.price}",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

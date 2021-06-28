@@ -20,6 +20,10 @@ class LoadingButtonWidget extends StatelessWidget {
       width: double.maxFinite,
       child: ElevatedButton(
         onPressed: isLoading ? null : onPressed,
+        style: ButtonStyle(
+          backgroundColor:
+              MaterialStateProperty.all<Color>(Theme.of(context).primaryColor),
+        ),
         child: isLoading ? CircularProgressIndicator() : Text("$title"),
       ),
     );

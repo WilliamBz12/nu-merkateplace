@@ -15,6 +15,7 @@ class OfferContentWidget extends StatelessWidget {
     return Expanded(
       child: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.network(
               "${_offer.product.image}",

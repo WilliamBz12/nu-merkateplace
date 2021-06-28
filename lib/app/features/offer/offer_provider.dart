@@ -17,5 +17,6 @@ final purchaseStateNotifierProvider =
     StateNotifierProvider.autoDispose<PurchaseStateNotifier, PurchaseState>(
   (ref) => PurchaseStateNotifier(
     ref.read(purchaseRepoProvider),
+    ref.watch(customerStateNotifierProvider.notifier),
   ),
 );

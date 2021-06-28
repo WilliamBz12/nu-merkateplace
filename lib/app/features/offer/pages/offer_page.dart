@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:numarketplace/app/shared/utils/common_snack_bar.dart';
 
 import '../../../app_provider.dart';
 import '../../../shared/models/offer_model.dart';
@@ -24,25 +25,15 @@ class _OfferPageState extends State<OfferPage> {
   void _handlePurchase(_, PurchaseState state) {
     state.maybeWhen(
       failure: (message) {
-        showDialog(
-          context: context,
-          builder: (_) => DialogMessageWidget(
-            message: message,
-            icon: Icons.error,
-          ),
-        );
+        CommonSnackBar().show(context: context, title: message);
       },
       success: (offer) {
-        context
-            .read(customerStateNotifierProvider.notifier)
-            .addNewPurchase(offer);
-        showDialog(
+        CommonSnackBar().show(
           context: context,
-          builder: (_) => DialogMessageWidget(
-            message: "You bought a ${offer.product.name}",
-            icon: Icons.check,
-          ),
+          title: "You bought a ${offer.product.name}",
+          backgroundColor: Colors.green,
         );
+        Navigator.pop(context);
       },
       orElse: () {},
     );

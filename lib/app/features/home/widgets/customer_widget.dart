@@ -12,29 +12,45 @@ class CustomerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "Hi ${_customer.name}",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 16,
-          ),
-        ),
         SizedBox(height: 10),
         Text(
-          "\$${_customer.balance}",
+          "Hi, ${_customer.name}",
           style: TextStyle(
             color: Colors.white,
             fontSize: 22,
             fontWeight: FontWeight.bold,
           ),
         ),
-        Text(
-          "Your balance",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 12,
+        SizedBox(height: 20),
+        Card(
+          child: Container(
+            width: double.maxFinite,
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 10),
+                Text(
+                  "\$${_customer.balance}",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 5),
+                Text(
+                  "Balance",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 12,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ],

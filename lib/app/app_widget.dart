@@ -10,6 +10,9 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderScope(
       child: MaterialApp.router(
+        theme: ThemeData(
+          primaryColor: Color(0xFF9c44dc),
+        ),
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
       ),

@@ -9,13 +9,26 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          BalanceWidget(),
-          Expanded(
-            child: OffersWidget(),
-          ),
-        ],
+      backgroundColor: Theme.of(context).primaryColor,
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            BalanceWidget(),
+            Text(
+              "Marketplace",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Expanded(
+              child: OffersWidget(),
+            ),
+          ],
+        ),
       ),
     );
   }

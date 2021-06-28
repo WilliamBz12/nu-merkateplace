@@ -11,8 +11,6 @@ import '../../features/offer/pages/offer_page.dart';
     CustomRoute(
       page: OfferPage,
       path: '/offer',
-      durationInMilliseconds: 3000,
-      reverseDurationInMilliseconds: 3000,
     ),
   ],
 )

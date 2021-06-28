@@ -21,7 +21,7 @@ void main() {
 
       expect(find.byKey(Key("offers")), findsOneWidget);
 
-      await tester.tap(find.byKey(Key("offer0")));
+      await tester.tap(find.byKey(Key("offer3")));
 
       await tester.pumpAndSettle();
 
@@ -34,6 +34,8 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.byType(AlertDialog), findsOneWidget);
+
+      await tester.tap(find.text("Ok"));
     },
   );
 }

@@ -22,20 +22,17 @@ class _BalanceWidgetState extends State<BalanceWidget> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 20),
-      color: Theme.of(context).primaryColor,
       child: SafeArea(
-        child: Center(
-          child: Consumer(
-            builder: (context, watch, child) {
-              final customerState = watch(customerStateNotifierProvider);
-              return customerState.maybeWhen(
-                failure: (error) => Text(error),
-                loading: () => CircularProgressIndicator(color: Colors.white),
-                success: (customer) => CustomerWidget(customer: customer),
-                orElse: () => Container(),
-              );
-            },
-          ),
+        child: Consumer(
+          builder: (context, watch, child) {
+            final customerState = watch(customerStateNotifierProvider);
+            return customerState.maybeWhen(
+              failure: (error) => Text(error),
+              loading: () => CircularProgressIndicator(color: Colors.white),
+              success: (customer) => CustomerWidget(customer: customer),
+              orElse: () => Container(),
+            );
+          },
         ),
       ),
     );
