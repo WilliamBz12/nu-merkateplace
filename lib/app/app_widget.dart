@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'auto_route_config.gr.dart';
+import 'core/routes/auto_route_config.gr.dart';
 
 class AppWidget extends StatelessWidget {
   final _appRouter = AppRouter();

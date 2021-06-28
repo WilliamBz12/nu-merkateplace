@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:numarketplace/app/features/home/home_provider.dart';
 
 import '../../../app_provider.dart';
 import 'customer_widget.dart';

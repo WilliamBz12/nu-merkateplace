@@ -6,7 +6,7 @@
 
 import 'package:auto_route/auto_route.dart' as _i1;
 import 'package:flutter/material.dart' as _i2;
-import 'package:numarketplace/app/features/home/home_page.dart' as _i3;
+import 'package:numarketplace/app/features/home/pages/home_page.dart' as _i3;
 import 'package:numarketplace/app/features/offer/pages/offer_page.dart' as _i4;
 import 'package:numarketplace/app/shared/models/offer_model.dart' as _i5;
 

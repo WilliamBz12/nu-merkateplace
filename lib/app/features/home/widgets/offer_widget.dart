@@ -1,8 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:numarketplace/app/core/routes/auto_route_config.gr.dart';
 import 'package:numarketplace/app/shared/models/offer_model.dart';
-
-import '../../../auto_route_config.gr.dart';
 
 class OfferWidget extends StatelessWidget {
   const OfferWidget({
