@@ -7,6 +7,7 @@ import '../../../shared/widgets/dialog_message_widget.dart';
 import '../../../shared/widgets/loading_button_widget.dart';
 import '../offer_provider.dart';
 import '../state_notifiers/purchase/purchase_state_notifier.dart';
+import '../widgets/offer_content_widget.dart';
 
 class OfferPage extends StatefulWidget {
   final OfferModel offer;
@@ -62,8 +63,11 @@ class _OfferPageState extends State<OfferPage> {
 
             return Column(
               children: [
-                _buildContent(),
+                OfferContentWidget(
+                  offer: widget.offer,
+                ),
                 LoadingButtonWidget(
+                  key: Key("purchase"),
                   onPressed: () {
                     context
                         .read(purchaseStateNotifierProvider.notifier)
@@ -75,54 +79,6 @@ class _OfferPageState extends State<OfferPage> {
               ],
             );
           },
-        ),
-      ),
-    );
-  }
-
-  Widget _buildContent() {
-    return Expanded(
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Image.network(
-              "${widget.offer.product.image}",
-              height: 300,
-              width: double.maxFinite,
-              fit: BoxFit.fitWidth,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "${widget.offer.product.name}",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text("${widget.offer.product.description}"),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    "\$${widget.offer.price}",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
         ),
       ),
     );

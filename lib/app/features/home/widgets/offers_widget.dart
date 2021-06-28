@@ -28,8 +28,12 @@ class _OffersWidgetState extends State<OffersWidget> {
             failure: (error) => Text(error),
             loading: () => CircularProgressIndicator(),
             success: (offers) => ListView.builder(
+              key: Key("offers"),
               itemCount: offers.length,
-              itemBuilder: (_, i) => OfferWidget(offer: offers[i]),
+              itemBuilder: (_, i) => OfferWidget(
+                offer: offers[i],
+                key: Key("offer$i"),
+              ),
             ),
             orElse: () => Container(),
           );
