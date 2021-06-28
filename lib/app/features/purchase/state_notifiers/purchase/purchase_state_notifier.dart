@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:numarketplace/app/shared/state_notifiers/customer/customer_state_notifier.dart';
 
 import '../../../../shared/models/offer_model.dart';
+import '../../../../shared/state_notifiers/customer/customer_state_notifier.dart';
 import '../../repositories/purchase_repository.dart';
 
 part 'purchase_state.dart';

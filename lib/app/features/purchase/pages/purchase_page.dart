@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:numarketplace/app/shared/utils/common_snack_bar.dart';
 
-import '../../../app_provider.dart';
 import '../../../shared/models/offer_model.dart';
-import '../../../shared/widgets/dialog_message_widget.dart';
+import '../../../shared/utils/common_snack_bar.dart';
 import '../../../shared/widgets/loading_button_widget.dart';
-import '../offer_provider.dart';
+import '../purchase_provider.dart';
 import '../state_notifiers/purchase/purchase_state_notifier.dart';
 import '../widgets/offer_content_widget.dart';
 
-class OfferPage extends StatefulWidget {
+class PurchasePage extends StatefulWidget {
   final OfferModel offer;
-  const OfferPage({
+  const PurchasePage({
     Key? key,
     required this.offer,
   }) : super(key: key);
 
   @override
-  _OfferPageState createState() => _OfferPageState();
+  _PurchasePageState createState() => _PurchasePageState();
 }
 
-class _OfferPageState extends State<OfferPage> {
+class _PurchasePageState extends State<PurchasePage> {
   void _handlePurchase(_, PurchaseState state) {
     state.maybeWhen(
       failure: (message) {

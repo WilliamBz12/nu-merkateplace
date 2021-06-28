@@ -2,17 +2,19 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:numarketplace/app/features/offer/repositories/purchase_repository.dart';
-import 'package:numarketplace/app/features/offer/state_notifiers/purchase/purchase_state_notifier.dart';
+import 'package:numarketplace/app/features/purchase/repositories/purchase_repository.dart';
+import 'package:numarketplace/app/features/purchase/state_notifiers/purchase/purchase_state_notifier.dart';
 import 'package:numarketplace/app/shared/models/customer_model.dart';
 import 'package:numarketplace/app/shared/models/offer_model.dart';
 import 'package:numarketplace/app/shared/models/product_model.dart';
+import 'package:numarketplace/app/shared/state_notifiers/customer/customer_state_notifier.dart';
 
 import 'purchase_state_notifier_test.mocks.dart';
 
-@GenerateMocks([PurchaseRepository])
+@GenerateMocks([PurchaseRepository, CustomerStateNotifier])
 void main() {
   final purchaseRepository = MockPurchaseRepository();
+  final customerStateNotifier = MockCustomerStateNotifier();
 
   final offer = OfferModel(
     price: 100,
@@ -24,14 +26,16 @@ void main() {
 
   test('initial state', () {
     expect(
-      PurchaseStateNotifier(purchaseRepository).debugState,
+      PurchaseStateNotifier(purchaseRepository, customerStateNotifier)
+          .debugState,
       equals(PurchaseState.initial()),
     );
   });
 
   group('purchase', () {
     test('should return a list of offer when try fetch all', () async {
-      final purchaseStateNotifier = PurchaseStateNotifier(purchaseRepository);
+      final purchaseStateNotifier =
+          PurchaseStateNotifier(purchaseRepository, customerStateNotifier);
 
       when(purchaseRepository.purchase(offer))
           .thenAnswer((_) => Future.value(Right(customer)));
@@ -47,7 +51,8 @@ void main() {
     });
 
     test('should trhow an error when try purchase', () async {
-      final purchaseStateNotifier = PurchaseStateNotifier(purchaseRepository);
+      final purchaseStateNotifier =
+          PurchaseStateNotifier(purchaseRepository, customerStateNotifier);
 
       when(purchaseRepository.purchase(offer))
           .thenAnswer((_) => Future.value(Left("Error")));

@@ -17,7 +17,7 @@ class OfferWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => AutoRouter.of(context).push(
-        OfferRoute(offer: _offer),
+        PurchaseRoute(offer: _offer),
       ),
       child: Card(
         margin: EdgeInsets.all(20),

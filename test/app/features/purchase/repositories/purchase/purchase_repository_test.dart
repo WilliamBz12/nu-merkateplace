@@ -4,7 +4,7 @@ import 'package:graphql/client.dart';
 
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:numarketplace/app/features/offer/repositories/purchase_repository.dart';
+import 'package:numarketplace/app/features/purchase/repositories/purchase_repository.dart';
 import 'package:numarketplace/app/shared/models/customer_model.dart';
 import 'package:numarketplace/app/shared/models/offer_model.dart';
 import 'package:numarketplace/app/shared/models/product_model.dart';
