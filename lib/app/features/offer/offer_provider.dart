@@ -2,7 +2,7 @@ import 'package:riverpod/riverpod.dart';
 
 import '../../app_provider.dart';
 import '../../shared/state_notifiers/customer/customer_state_notifier.dart';
-import 'repository/purchase_repository.dart';
+import 'repositories/purchase_repository.dart';
 import 'state_notifiers/purchase/purchase_state_notifier.dart';
 
 final purchaseRepoProvider = Provider.autoDispose<PurchaseRepository>(

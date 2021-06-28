@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../shared/models/offer_model.dart';
-import '../../repository/purchase_repository.dart';
+import '../../repositories/purchase_repository.dart';
 
 part 'purchase_state.dart';
 part 'purchase_state_notifier.freezed.dart';

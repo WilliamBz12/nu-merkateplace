@@ -30,7 +30,10 @@ void main() {
         ),
       );
       final data = await customerRepository.fetch();
-      final customer = (data as Right).value as CustomerModel;
+      final customer = data.getOrElse(() => CustomerModel(
+            name: "",
+            balance: 0,
+          ));
       expect(
         customer.name,
         equals(CustomerModel.fromJson(result["viewer"]).name),
