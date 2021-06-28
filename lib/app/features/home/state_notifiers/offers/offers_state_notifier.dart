@@ -1,7 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:numarketplace/app/features/home/repostories/offers_repository.dart';
-import 'package:numarketplace/app/shared/models/offer_model.dart';
+
+import '../../../../shared/models/offer_model.dart';
+import '../../repostories/offers_repository.dart';
 
 part 'offers_state.dart';
 part 'offers_state_notifier.freezed.dart';

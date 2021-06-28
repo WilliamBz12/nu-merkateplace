@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:numarketplace/app/shared/models/customer_model.dart';
+
+import '../models/customer_model.dart';
 
 class CustomerRepository {
   CustomerRepository({required GraphQLClient client}) : _client = client;

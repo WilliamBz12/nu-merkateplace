@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:numarketplace/app/shared/models/customer_model.dart';
-import 'package:numarketplace/app/shared/models/offer_model.dart';
+
+import '../../../shared/models/customer_model.dart';
+import '../../../shared/models/offer_model.dart';
 
 class PurchaseRepository {
   PurchaseRepository({

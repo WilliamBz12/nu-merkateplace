@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:numarketplace/app/shared/models/offer_model.dart';
+import '../../../shared/models/offer_model.dart';
 
 class OffersRepository {
   OffersRepository({required GraphQLClient client}) : _client = client;

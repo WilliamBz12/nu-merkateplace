@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:numarketplace/app/shared/models/customer_model.dart';
+import '../../../shared/models/customer_model.dart';
 
 class CustomerWidget extends StatelessWidget {
   const CustomerWidget({
     Key? key,
-    required this.customer,
-  }) : super(key: key);
-  final CustomerModel customer;
+    required CustomerModel customer,
+  })  : _customer = customer,
+        super(key: key);
+  final CustomerModel _customer;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          "Hi ${customer.name}",
+          "Hi ${_customer.name}",
           style: TextStyle(
             color: Colors.white,
             fontSize: 16,
@@ -21,7 +23,7 @@ class CustomerWidget extends StatelessWidget {
         ),
         SizedBox(height: 10),
         Text(
-          "\$${customer.balance}",
+          "\$${_customer.balance}",
           style: TextStyle(
             color: Colors.white,
             fontSize: 22,

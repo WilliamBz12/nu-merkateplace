@@ -1,9 +1,9 @@
-import 'package:numarketplace/app/features/offer/repository/purchase_repository.dart';
-import 'package:numarketplace/app/features/offer/state_notifiers/purchase/purchase_state_notifier.dart';
-import 'package:numarketplace/app/shared/state_notifiers/customer/customer_state_notifier.dart';
 import 'package:riverpod/riverpod.dart';
 
 import '../../app_provider.dart';
+import '../../shared/state_notifiers/customer/customer_state_notifier.dart';
+import 'repository/purchase_repository.dart';
+import 'state_notifiers/purchase/purchase_state_notifier.dart';
 
 final purchaseRepoProvider = Provider.autoDispose<PurchaseRepository>(
   (ref) => PurchaseRepository(

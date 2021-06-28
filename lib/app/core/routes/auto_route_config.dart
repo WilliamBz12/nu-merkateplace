@@ -1,8 +1,8 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:numarketplace/app/features/home/pages/home_page.dart';
 
-import 'package:numarketplace/app/features/offer/pages/offer_page.dart';
+import '../../features/home/pages/home_page.dart';
+import '../../features/offer/pages/offer_page.dart';
 
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Page,Route',

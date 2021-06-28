@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:numarketplace/app/features/offer/state_notifiers/purchase/purchase_state_notifier.dart';
-import 'package:numarketplace/app/shared/models/offer_model.dart';
-import 'package:numarketplace/app/shared/widgets/dialog_message_widget.dart';
-import 'package:numarketplace/app/shared/widgets/loading_button_widget.dart';
 
 import '../../../app_provider.dart';
+import '../../../shared/models/offer_model.dart';
+import '../../../shared/widgets/dialog_message_widget.dart';
+import '../../../shared/widgets/loading_button_widget.dart';
 import '../offer_provider.dart';
+import '../state_notifiers/purchase/purchase_state_notifier.dart';
 
 class OfferPage extends StatefulWidget {
   final OfferModel offer;
