@@ -9,7 +9,7 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   testWidgets(
-    "test app",
+    "should buy a product without problems",
     (tester) async {
       await tester.pumpWidget(AppWidget());
 
