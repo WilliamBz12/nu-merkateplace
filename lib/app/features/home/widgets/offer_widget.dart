@@ -30,7 +30,7 @@ class OfferWidget extends StatelessWidget {
               width: double.maxFinite,
               height: 70,
               child: Image.network(
-                _offer.product.image,
+                "${_offer.product.image}",
                 fit: BoxFit.cover,
               ),
             ),

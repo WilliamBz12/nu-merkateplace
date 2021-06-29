@@ -15,7 +15,9 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            BalanceWidget(),
+            BalanceWidget(
+              key: Key("balance"),
+            ),
             Text(
               "Marketplace",
               style: TextStyle(
@@ -25,7 +27,9 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: OffersWidget(),
+              child: OffersWidget(
+                key: Key("offers"),
+              ),
             ),
           ],
         ),

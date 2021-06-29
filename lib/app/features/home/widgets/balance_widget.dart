@@ -20,7 +20,7 @@ class _BalanceWidgetState extends State<BalanceWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Padding(
       padding: EdgeInsets.symmetric(vertical: 20),
       child: SafeArea(
         child: Consumer(
@@ -29,7 +29,10 @@ class _BalanceWidgetState extends State<BalanceWidget> {
             return customerState.maybeWhen(
               failure: (error) => Text(error),
               loading: () => CircularProgressIndicator(color: Colors.white),
-              success: (customer) => CustomerWidget(customer: customer),
+              success: (customer) => CustomerWidget(
+                customer: customer,
+                key: Key("customerInfo"),
+              ),
               orElse: () => Container(),
             );
           },
