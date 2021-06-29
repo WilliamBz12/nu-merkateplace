@@ -9,7 +9,7 @@
 
 * [Installation](#construction_worker-installation)
 * [Getting Started](#runner-getting-started)
-* [FAQ](#postbox-faq)
+* [Tests](#closed_book-tests)
 * [Found a bug? Missing a specific feature?](#bug-issues)
 
 # :construction_worker: Installation
@@ -55,16 +55,27 @@ Web:
 flutter build web
 ```
 
-# :bug: Issues
+# :closed_book: Tests
 
-Feel free to **file a new issue** with a respective title and description on the [Phoenix Blog](https://github.com/WilliamBz12/phoenix-blog/issues) repository. If you already found a solution to your problem, **i would love to review your pull request**! Have a look at our [contribution guidelines](https://github.com/WilliamBz12/paypal-clone/blob/master/CONTRIBUTING.md) to find out about the coding standards.
+Run the following command to run units and widgets test's 
 
-# :tada: Contributing
+```
+flutter test 
+```
+
+Run the following command to run integration tests, but first make sure a device is open (Android or IOs)
+
+```
+flutter drive -t lib/main.dart --driver=test_driver/integration_test.dart --target=integration_test/app_test.dart
+```
+
+
+# :tada: Architecture
 
 Check out the [contributing](https://github.com/WilliamBz12/phoenix-blog/blob/master/CONTRIBUTING.md) page to see the best places to file issues, start discussions and begin contributing.
 
 
-# :closed_book: License
+# :closed_book: Why Riverpod?
 
 Documention and application under development.
 Released in 2020.
@@ -72,11 +83,5 @@ This project is under the [MIT license](https://github.com/WilliamBz12/phoenix-b
 
 Made with love by [Laura Beatris](https://github.com/WilliamBz12) 💜🚀
 
-
-Integration Tests:
-
-flutter drive -t lib/main.dart --driver=test_driver/integration_test.dart --target=integration_test/app_test.dart
-
-Generate code: 
 
 
