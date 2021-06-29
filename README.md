@@ -11,7 +11,7 @@
 * [Getting Started](#runner-getting-started)
 * [Tests](#closed_book-tests)
 * [Architecture](#tada-architecture)
-* [Why Riverpod?](#closed_book-why-riverpod)
+* [Why Riverpod with State Notifier?](#closed_book-why-riverpod-with-state-notifier)
 
 # :construction_worker: Installation
 
@@ -105,7 +105,7 @@ app_provider.dart
 
 # :closed_book: Why Riverpod with State Notifier?
 
-I was decide use Riverpod 'cause some reasons, the main was:
+I was decide use Riverpod for the following reasons:
 - The provider is build in a simple var out of the widget file and can be used in any widget.
 - Authored by Rémi Rousselet, the creator of provider (it's to be better than provider package)
 - AutoDispose, when you use auto dispose in your dependecy, it's will be disposed when has no watch in the var, so we have gain of memory.
