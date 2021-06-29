@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:numarketplace/app/app_widget.dart';
@@ -7,6 +8,10 @@ import 'package:numarketplace/app/features/purchase/pages/purchase_page.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+
+  setUp(() async {
+    await dotenv.load(fileName: "assets/.env");
+  });
 
   testWidgets(
     "should throw an error when try buy a offer",
