@@ -10,7 +10,8 @@
 * [Installation](#construction_worker-installation)
 * [Getting Started](#runner-getting-started)
 * [Tests](#closed_book-tests)
-* [Found a bug? Missing a specific feature?](#bug-issues)
+* [Architecture](#tada-architecture)
+* [Why Riverpod?](#closed_book-why-riverpod?)
 
 # :construction_worker: Installation
 
