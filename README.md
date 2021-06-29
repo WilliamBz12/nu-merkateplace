@@ -11,7 +11,7 @@
 * [Getting Started](#runner-getting-started)
 * [Tests](#closed_book-tests)
 * [Architecture](#tada-architecture)
-* [Why Riverpod?](#closed_book-why-riverpod?)
+* [Why Riverpod?](#closed_book-why-riverpod)
 
 # :construction_worker: Installation
 
@@ -73,8 +73,33 @@ flutter drive -t lib/main.dart --driver=test_driver/integration_test.dart --targ
 
 # :tada: Architecture
 
-Check out the [contributing](https://github.com/WilliamBz12/phoenix-blog/blob/master/CONTRIBUTING.md) page to see the best places to file issues, start discussions and begin contributing.
+In the folder architecture was oriented by features by layers. Where:
 
+Core: it's the app configs, as Api Client and Routes.
+Shared: It's the global and shared files, as state_notifiers, repositories and widgets.
+Features: It's the feat config, as home and purchase where each feature has you own layers.
+
+```
+app/
+  features/
+  |- home
+  |- purchase
+    |- repositories
+    |- state_notifiers
+    |- widgets
+    |- pages
+    purchase_provider.dart
+  core/
+    |- routes
+    |- api
+      api_client_factory.dart #As API provider
+  shared/
+    |- repositories
+    |- state_notifiers
+    |-widgets #common widgets
+app_widget.dart
+app_provider.dart
+```
 
 # :closed_book: Why Riverpod?
 
