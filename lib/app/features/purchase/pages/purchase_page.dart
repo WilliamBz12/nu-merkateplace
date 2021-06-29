@@ -53,6 +53,7 @@ class _PurchasePageState extends State<PurchasePage> {
             return Column(
               children: [
                 OfferContentWidget(
+                  key: Key("offerContent"),
                   offer: widget.offer,
                 ),
                 LoadingButtonWidget(

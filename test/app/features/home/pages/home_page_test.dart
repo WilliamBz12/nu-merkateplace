@@ -13,7 +13,6 @@ import 'mocks.dart';
 @GenerateMocks([
   OffersRepository,
   CustomerRepository,
-  NavigatorObserver,
 ])
 void main() {
   setUpAll(TestWidgetsFlutterBinding.ensureInitialized);
