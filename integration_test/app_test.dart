@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:numarketplace/app/app_widget.dart';
 import 'package:numarketplace/app/features/home/pages/home_page.dart';
-import 'package:numarketplace/app/features/offer/pages/offer_page.dart';
+import 'package:numarketplace/app/features/purchase/pages/purchase_page.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +25,7 @@ void main() {
 
       await tester.pumpAndSettle();
 
-      await tester.tap(find.byType(OfferPage));
+      await tester.tap(find.byType(PurchasePage));
 
       await tester.pumpAndSettle();
 
@@ -33,9 +33,27 @@ void main() {
 
       await tester.pumpAndSettle();
 
-      expect(find.byType(AlertDialog), findsOneWidget);
+      expect(find.byType(SnackBar), findsOneWidget);
 
-      await tester.tap(find.text("Ok"));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(HomePage), findsOneWidget);
+
+      expect(find.text("\$0"), findsOneWidget);
+
+      await tester.tap(find.byKey(Key("offer2")));
+
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byKey(Key("purchase")));
+
+      await tester.pumpAndSettle();
+
+      expect(find.byType(SnackBar), findsOneWidget);
+
+      await tester.pumpAndSettle();
+
+      expect(find.byType(PurchasePage), findsOneWidget);
     },
   );
 }
