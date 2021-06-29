@@ -14,21 +14,27 @@
 
 # :construction_worker: Installation
 
-**You need to install [Flutter](https://flutter.dev/) and [Phoenix](https://dart.dev/) first, then in order to clone the project via HTTPS, run this command:**
+**You need to install [Flutter](https://flutter.dev/) and [Dart](https://dart.dev/) first, then in order to clone the project via HTTPS, run this command:**
 
 ```
   git clone https://github.com/WilliamBz12/nu-merkateplace.git
 ```
 
-Run get packages
+Run get package
 
 ```
 flutter pub get
 ```
 
+To generate code run
+
+```
+flutter pub run build_runner build --delete-conflicting-outputs
+```
+
 # :runner: Getting Started
 
-Run the following command to run app in your device (Android, IOs or Web)
+Run the following command to run the app in your device (Android, IOs or Web)
 
 ```
 flutter run 
@@ -36,15 +42,15 @@ flutter run
 
 if you want generate a build run the following command
 
-Android
+Android:
 ```
 flutter build apk
 ```
-IOs
+IOs:
 ```
 flutter build ios
 ```
-Web
+Web:
 ```
 flutter build web
 ```
@@ -73,4 +79,4 @@ flutter drive -t lib/main.dart --driver=test_driver/integration_test.dart --targ
 
 Generate code: 
 
-flutter pub run build_runner build --delete-conflicting-outputs
+
