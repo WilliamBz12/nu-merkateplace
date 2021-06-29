@@ -18,8 +18,10 @@
 **You need to install [Flutter](https://flutter.dev/) and [Dart](https://dart.dev/) first, then in order to clone the project via HTTPS, run this command:**
 
 ```
-  git clone https://github.com/WilliamBz12/nu-merkateplace.git
+  git clone ********
 ```
+
+**Or you can download the .zip file**
 
 Run get package
 
@@ -75,9 +77,9 @@ flutter drive -t lib/main.dart --driver=test_driver/integration_test.dart --targ
 
 In the folder architecture was oriented by features by layers. Where:
 
-Core: it's the app configs, as Api Client and Routes.
-Shared: It's the global and shared files, as state_notifiers, repositories and widgets.
-Features: It's the feat config, as home and purchase where each feature has you own layers.
+- Core: it's the app configs, as Api Client and Routes.
+- Shared: It's the global and shared files, as state_notifiers, repositories and widgets.
+- Features: It's the feat config, as home and purchase where each feature has you own layers.
 
 ```
 app/
@@ -101,13 +103,19 @@ app_widget.dart
 app_provider.dart
 ```
 
-# :closed_book: Why Riverpod?
+# :closed_book: Why Riverpod with State Notifier?
 
-Documention and application under development.
-Released in 2020.
-This project is under the [MIT license](https://github.com/WilliamBz12/phoenix-blog/master/LICENSE).
+I was decide use Riverpod 'cause some reasons, the main was:
+- The provider is build in a simple var out of the widget file and can be used in any widget.
+- Authored by Rémi Rousselet, the creator of provider (it's to be better than provider package)
+- AutoDispose, when you use auto dispose in your dependecy, it's will be disposed when has no watch in the var, so we have gain of memory.
 
-Made with love by [Laura Beatris](https://github.com/WilliamBz12) 💜🚀
+I was decide use State Notifier for the following reasons: 
+- imumutable, as bloc. 
+- state field is a single Stream of State like bloc cubit, so it's not complicate to use.
+- It's make to use with Riverpod. 
+
+#### Enjoy! 💜🚀
 
 
 
