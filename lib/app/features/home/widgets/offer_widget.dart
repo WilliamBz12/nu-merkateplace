@@ -32,6 +32,7 @@ class OfferWidget extends StatelessWidget {
               child: Image.network(
                 "${_offer.product.image}",
                 fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) => Container(),
               ),
             ),
             Expanded(

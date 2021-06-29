@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:numarketplace/app/shared/models/offer_model.dart';
 
 import '../home_provider.dart';
 import 'offer_widget.dart';
@@ -27,20 +28,24 @@ class _OffersWidgetState extends State<OffersWidget> {
           return offersState.maybeWhen(
             failure: (error) => Text(error),
             loading: () => CircularProgressIndicator(),
-            success: (offers) => GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-              ),
-              key: Key("offers"),
-              itemCount: offers.length,
-              itemBuilder: (_, i) => OfferWidget(
-                offer: offers[i],
-                key: Key("offer$i"),
-              ),
-            ),
+            success: _buildGrid,
             orElse: () => Container(),
           );
         },
+      ),
+    );
+  }
+
+  Widget _buildGrid(List<OfferModel> offers) {
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+      ),
+      key: Key("gridOffers"),
+      itemCount: offers.length,
+      itemBuilder: (_, i) => OfferWidget(
+        offer: offers[i],
+        key: Key("offer$i"),
       ),
     );
   }
